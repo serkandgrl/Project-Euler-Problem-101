@@ -1,0 +1,18 @@
+private long optimal(int grade, int arg){
+        double sum=0;
+        double prod, norm;
+        for (int i = 1; i <= grade+1; i++){
+            prod = 1;
+            for (int j = 1; j <= grade+1; j++){
+                if (j != i) prod *= (i - j);
+            }
+            norm = val[i]/prod;
+prod = 1;
+            for (int j = 1; j <= grade + 1; j++){
+                if (j != i)
+                    prod *= (arg - j);
+            }
+            sum += norm*prod;
+        }
+        return Math.round(sum);
+    }
